@@ -24,5 +24,4 @@ yarn-error.log*
 
 /es
 /src/dist
-/dist
 /build
