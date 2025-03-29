@@ -1,10 +1,9 @@
 {
   "name": "antd-jalali",
-  "version": "1.4.3",
-  "description": "A wrapper for ant-design datepicker and calendar to support Jalali calendar type with dayjs.",
+  "version": "0.9.4",
+  "description": "A wrapper for ant-design datepicker and calendar to support Jalali calendar type with dayjs. (supports CommonJs)",
   "keywords": [
     "ant",
-    "ant4",
     "datepicker",
     "calendar",
     "jalali",
@@ -20,43 +19,41 @@
     "type": "git",
     "url": "https://github.com/saeedrahimi/antd-jalali"
   },
-  "main": "lib/cjs/index.cjs.js",
-  "module": "lib/esm/index.js",
-  "types": "lib/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "typings": "./antd-jalali.d.ts",
   "files": [
-    "lib",
-    "README.md"
+    "dist/",
+    "antd-jalali.d.ts"
   ],
   "scripts": {
-    "dev": "vite -d",
-    "build": "tsc -b && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "ts-declaration": " tsc -p ./tsconfig.lib.json --emitDeclarationOnly --outDir lib/types",
-    "build:lib": "rimraf lib && node ./esbuild.js && npm run ts-declaration"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "clean": "rimraf dist/",
+    "build:esm": "tsc -p ./tsconfig.json",
+    "build:cjs": "tsc -p ./tsconfig-cjs.json"
   },
   "dependencies": {
-    "dayjs": "^1.11.10",
-    "jalali-plugin-dayjs": "^1.1.4",
+    "dayjs": "^1.9.6",
     "jalaliday": "^2.3.0",
-    "rc-picker": "^2.7.6"
+    "rc-picker": "^2.4.1"
   },
   "peerDependencies": {
-    "antd": "^4.24.16",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "antd": "^4.8.4",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.13.1",
-    "@typescript-eslint/parser": "^7.13.1",
-    "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "@types/react": "^16.9.21",
+    "@types/react-dom": "^16.9.5",
+    "antd": "^4.8.4",
+    "copyfiles": "^2.4.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "latest",
+    "rimraf": "^3.0.2",
+    "typescript": "~4.0.0"
   },
   "browserslist": {
     "production": [
